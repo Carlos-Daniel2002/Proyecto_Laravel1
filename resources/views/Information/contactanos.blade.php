@@ -12,6 +12,9 @@ body{
 h5{ 
     color: #3633FF;
 }
+h4{ 
+    color: #33ffd3;
+}
 .perfil{
 	border-image: black;
 	width: 120px;
@@ -52,7 +55,7 @@ h5{
           <p>Excel 2016 especialista</p>
           <p>Word 2016 especialista</p>
           <p>Toeic listening and Reading</p>
-          <p>Toeic Speaking and</p>
+          <p>Toeic Speaking and Writing</p>
           </td>
           <td>
           <h4>Habilidades</h4>

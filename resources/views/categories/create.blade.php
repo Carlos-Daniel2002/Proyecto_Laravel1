@@ -18,10 +18,11 @@ if (session('error')) {
   @csrf
 
   <p class="text-light">Nombre de la categoría</p>
-  <input type="text" name="name" value="<?php echo old('name') ?>" placeholder="Nombre de categoría" class="border">
+  <input type="text" name="name" value="<?php echo old('name') ?>" placeholder="Nombre de categoría" class="form-control">
 
   <p class="text-light">Descripción de la categoría</p>
-  <textarea name="description" rows="5" class="border"><?php echo old('description') ?></textarea>
+  <textarea name="description" rows="5" class="form-control"><?php echo old('description') ?></textarea>
+  <br>
   
   <p><button class="btn btn-success">Guardar</button></p>
 </form>

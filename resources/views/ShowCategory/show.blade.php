@@ -8,29 +8,31 @@
 @endif
 
 <div class="d-flex justify-content-end">
-    <div>Encontramos {{ $category->total() }} Pelicula(s) en total</div>
+    <div class="p-3 mb-2 bg-success text-white">Encontramos {{ $category->total() }} Pelicula(s) en total</div>
     @if ($category->hasPages())
       @if (!$category->onFirstPage())
-      <div><a href="{{ $category->previousPageUrl() }}">(  ANTERIOR  )</a></div>
+      <div class="p-3 mb-2 bg-light text-dark"><a href="{{ $category->previousPageUrl() }}">( --Anterior--  )</a></div>
       @else
-      <div> (  ANTERIOR  )</div>
+      <div class="p-3 mb-2 bg-light text-dark"> ( --Anterior--  )</div>
       @endif
-    <div>Página {{ "{$category->currentPage()} de {$category->lastPage()}" }}</div>
+    <div class="p-3 mb-2 bg-success text-white">Página {{ "{$category->currentPage()} de {$category->lastPage()}" }}</div>
       @if ($category->hasMorePages())
-      <div><a href="{{ $category->nextPageUrl() }}"> (  SIGUIENTE  )</a></div>
+      <div class="p-3 mb-2 bg-light text-dark"><a href="{{ $category->nextPageUrl() }}"> ( --Siguiente--  )</a></div>
       @else
-      <div>(  SIGUIENTE  )</div>
+      <div class="p-3 mb-2 bg-light text-dark">( --Siguiente--  )</div>
       @endif
     @endif
   </div>
+<br><br>
 
-    @foreach ($category as $item)
-        <br>
-        <p class="text-light"><strong>{{ $item->name}}</strong></p>
+    <div class="row">
+      @foreach ($category as $item)
+    <div class="col-2">
          <a href="{{ route('ShowMovie.show', $item->id) }}">
-            <img src="{{asset('storage/app/public/'.$item->image)}}" alt="" width="200xp" height="400px" class="img-thumbnail">
-        </a>
-        <br>
+            <img src="{{asset('storage/app/public/'.$item->image)}}" alt="" width="200xp" height="400px" class="img-thumbnail"></a>
+    </div>
         @endforeach
+    </div>
+
 
 @endsection

@@ -9,16 +9,14 @@
                 <img src="{{asset('imagenes/emoji.jpg')}}" alt="" width="170xp" height="200px"></center>         
 @endif
 <br>
-<table>
-    <tr>
-@foreach ($movies as $value)
-        <td class="bg-dark">
-            <a href="{{ route('ShowMovie.show', $value->id) }}">
-            <img src="{{ asset('storage/app/public/'.$value->image) }}" alt="Imagen" width="135px" height="250xp" >
-            </a>
-        </td>
-    
-@endforeach
-    </tr>
-</table>
+        <div class="row">
+            @foreach ($movies as $value)
+            <div class="col-2">
+                <a href="{{ route('ShowMovie.show', $value->id) }}">
+            <img src="{{ asset('storage/app/public/'.$value->image) }}" alt="Imagen" width="135px" height="250xp"> </a>
+            </div>
+            @endforeach
+        </div>
+            
+  
 @endsection

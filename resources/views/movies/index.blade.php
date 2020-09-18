@@ -21,11 +21,16 @@
 @if (count($movies) == 0)
 <p>No hay ninguna pelicula creado por el momento</p>
 @else
-<ol class="text-light">
-  @foreach($movies as $movie)
-  <li><a href="{{ route('movies.show', $movie->id) }}" class="text-primary"><img src="{{asset('storage/app/public/'.$movie->image)}}" alt="" width="150xp" height="300px" class="img-thumbnail"></a></li>
+
+<div class="row">
+  @foreach ($movies as $movie)
+  <div class="col-2">
+      <a href="{{ route('movies.show', $movie->id) }}">
+  <img src="{{ asset('storage/app/public/'.$movie->image) }}" alt="Imagen" width="135px" height="250xp" class="img-thumbnail"> </a>
+  </div>
   @endforeach
-</ol>
+</div>
+
 @endif
 
 @endsection

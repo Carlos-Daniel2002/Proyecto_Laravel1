@@ -13,10 +13,10 @@
   <input type="hidden" name="_method" value="PUT">
 
   <p class="text-light">Nombre de la categoría</p>
-  <input type="text" name="name" value="{{ $category->name }}" placeholder="Nombre de categoría" class="border">
+  <input type="text" name="name" value="{{ $category->name }}" placeholder="Nombre de categoría" class="form-control">
   
   <p class="text-light">Descripción de la categoría</p>
-  <textarea name="description" rows="5" class="border">{{ $category->description }}</textarea>
+  <textarea name="description" rows="5" class="form-control">{{ $category->description }}</textarea><br>
   
   <p><button class="btn btn-primary">Actualizar</button></p>
 </form>
